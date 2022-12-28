@@ -24,7 +24,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+/*
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                 .detectDiskReads()
                 .detectDiskWrites()
@@ -36,7 +36,7 @@ public class App extends Application {
                 .detectLeakedClosableObjects()
                 .penaltyLog()
                 .penaltyDeath()
-                .build());
+                .build());*/
 
         // If using Android-Universal-Image-Loader
         // Create global configuration and initialize ImageLoader with default config

@@ -45,13 +45,14 @@ public class GlideBitmapLoader implements BitmapLoader {
     @Override
     public void load(@Nullable Object model, @NonNull ImageView imageView) {
         RequestOptions requestOptions = new RequestOptions();
-        requestOptions.skipMemoryCache(true)
+        requestOptions = requestOptions.skipMemoryCache(true)
                 .diskCacheStrategy(DiskCacheStrategy.DATA)
                 .transform(transformation);
 
         requestManager.asBitmap()
                 .load(model)
-                .apply(requestOptions);
+                .apply(requestOptions)
+                .into(imageView);
     }
 
     public static BitmapLoader createUsing(@NonNull CropView cropView) {
