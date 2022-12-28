@@ -1,26 +1,13 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
-    }
+plugins {
+    id 'com.android.application' version '7.2.2' apply false
+    id 'com.android.library' version '7.2.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
 }
 
-allprojects {
-    repositories {
-        jcenter()
-        maven {
-            url "https://maven.google.com"
-        }
-    }
-}
 
 ext {
-    minSdkVersion = 14
-    compileSdkVersion = 24
-    buildToolsVersion = '24.0.3'
+    minSdkVersion = 21
+    compileSdkVersion = 32
 
     junitVersion = '4.12'
     mockitoVersion = '1.10.19'

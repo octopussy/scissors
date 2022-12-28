@@ -1,11 +1,12 @@
 package com.lyft.android.scissors2;
 
 import android.graphics.Bitmap;
-import android.support.annotation.Nullable;
 import android.view.ViewTreeObserver;
 
 import static com.lyft.android.scissors2.CropView.Extensions.LoaderType;
 import static com.lyft.android.scissors2.CropViewExtensions.resolveBitmapLoader;
+
+import androidx.annotation.Nullable;
 
 public class LoadRequest {
 

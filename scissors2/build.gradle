@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -10,8 +9,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     dexOptions {
@@ -21,19 +20,17 @@ android {
 
 dependencies {
     // Test
-    testCompile 'junit:junit:' + rootProject.ext.junitVersion
-    testCompile 'org.mockito:mockito-core:' + rootProject.ext.mockitoVersion
-    testCompile 'org.robolectric:robolectric:' + rootProject.ext.robolectricVersion
-    testCompile 'org.assertj:assertj-core:' + rootProject.ext.assertjVersion
+    testImplementation 'junit:junit:' + rootProject.ext.junitVersion
+    testImplementation 'org.mockito:mockito-core:' + rootProject.ext.mockitoVersion
+    testImplementation 'org.robolectric:robolectric:' + rootProject.ext.robolectricVersion
+    testImplementation 'org.assertj:assertj-core:' + rootProject.ext.assertjVersion
     // Support Annotations
-    compile 'com.android.support:support-annotations:' + rootProject.ext.supportVersion
+    //implementation 'com.android.support:support-annotations:' + rootProject.ext.supportVersion
     // Optional dependencies for extensions
     // Picasso
-    provided 'com.squareup.picasso:picasso:[2.4.0, 2.5.2)'
+    implementation 'com.squareup.picasso:picasso:[2.4.0, 2.5.2)'
     // Glide
-    provided 'com.github.bumptech.glide:glide:4.1.1'
-    provided 'com.nostra13.universalimageloader:universal-image-loader:[1.9.2, 1.9.5)'
-    provided 'com.android.support:support-v4:' + rootProject.ext.supportVersion
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:[1.9.2, 1.9.5)'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
 }
-
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
